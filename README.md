@@ -24,6 +24,8 @@ Este repositório contém um projeto de aplicação web que consome a [API do Ri
    - `feat/add-footer-and-semantics`
    - `feat/-style-css`
    - `feat/update-readme-style`
+   - `feat/Dockerfile`
+
 
 2. **Lucas Araújo**
 
