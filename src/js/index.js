@@ -1,7 +1,9 @@
 const cardContainerElement = document.getElementById("cards-container");
 
-const getCharacters = async () => {
-  const request = await fetch("https://rickandmortyapi.com/api/character");
+const getCharacters = async (pageNumber) => {
+  const request = await fetch(
+    `https://rickandmortyapi.com/api/character?page=${pageNumber}`
+  );
 
   if (request.status != 200) throw new Error("Error on get characters request");
 
@@ -11,7 +13,7 @@ const getCharacters = async () => {
   return characters;
 };
 
-const insertInHtml = (data) => {
+const insertInHtml = async (data) => {
   for (let i = 0; i < data.length; i++) {
     const character = data[i];
 
@@ -52,7 +54,9 @@ const insertInHtml = (data) => {
 };
 
 (async () => {
-  const characters = await getCharacters();
+  for (let i = 1; i < 43; i++) {
+    const characters = await getCharacters(i);
 
-  insertInHtml(characters);
+    insertInHtml(characters);
+  }
 })();
