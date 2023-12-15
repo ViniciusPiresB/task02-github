@@ -18,7 +18,7 @@ const insertInHtml = async (data) => {
     const character = data[i];
 
     const cardElement = document.createElement("div");
-    cardElement.classList.add("card");
+    cardElement.classList.add("card", "centered-card"); 
     cardElement.style = "width: 18rem";
 
     const url = character.image;
